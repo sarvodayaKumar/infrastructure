@@ -30,8 +30,8 @@ jobs:
           docker tag my-app:${{ github.sha }} my-dockerhub-username/my-app:${{ github.sha }}
           docker push my-dockerhub-username/my-app:${{ github.sha }}
 
-  deploy:
-    needs: build
+deploy:
+  needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Setup Kubernetes (Minikube)
