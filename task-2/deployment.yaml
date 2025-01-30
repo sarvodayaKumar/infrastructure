@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: my-app
-          image: ${{ secrets.DOCKER_USERNAME }}/my-app:latest
+          image: ${DOCKER_USERNAME}/my-app:${GITHUB_SHA}
           ports:
             - containerPort: 3000
           readinessProbe:
